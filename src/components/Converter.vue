@@ -60,6 +60,9 @@
     } else if (chosenGame.value == "Battlefield 2042" && finalGame.value == "Valorant") {
       const result = calcSensBF2042ToVal(sens.value, dpi.value, newDpi.value);
       finalSens.value = result;
+    } else if (chosenGame.value == "Valorant" && finalGame.value == "Battlefield 2042") {
+      const result = calcSensBF2042ToVal(sens.value, dpi.value, newDpi.value);
+      finalSens.value = result; 
     } else if (chosenGame.value = "Warzone 2" && finalGame.value == "Counter Strike 2") {
       const result = calcSensWarzone2ToCS2(sens.value, dpi.value, newDpi.value);
       finalSens.value = result;

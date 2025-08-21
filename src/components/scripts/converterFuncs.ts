@@ -1,13 +1,13 @@
 export function calcSensCS2ToBF2042(sens1: number, DPI1: number, DPI2: number) {
     const CS2toBF2042ScaleFactor = 1.666667;
+    const result = (sens1 * (DPI1 / DPI2)) * CS2toBF2042ScaleFactor;
+    return result;
+}
 
-    if (DPI1 == DPI2) {
-        const result = sens1 * CS2toBF2042ScaleFactor;
-        return result;
-    } else {
-        const result = (sens1 * (DPI1 / DPI2)) * CS2toBF2042ScaleFactor;
-        return result;
-    }
+export function calcSensBF2042ToCS2(sens1: number, DPI1: number, DPI2: number) {
+    const BF2042toCS2ScaleFactor = 0.6;
+    const result = (sens1 * (DPI1 / DPI2)) * BF2042toCS2ScaleFactor;
+    return result;
 }
 
 export function calcSensCS2toVal(sens1: number, DPI1: number, DPI2: number) {
@@ -22,6 +22,11 @@ export function calcSensValToCS2(sens1: number, DPI1: number, DPI2: number) {
 
 export function calcSensBF2042ToVal(sens1: number, DPI1: number, DPI2: number) {
     const result = sens1 * (DPI1 / DPI2) * (0.0066 / 0.07);
+    return result;
+}
+
+export function calcSensValToBF2042(sens1: number, DPI1: number, DPI2: number) {
+    const result = sens1 * (DPI1 / DPI2) * (0.07 / 0.0066);
     return result;
 }
 
