@@ -1,7 +1,7 @@
 <template>
   <div class="mb-5">
     <label for="game">Choose your game:</label>
-    <select name="game" id="game" v-model="chosenGame" class="border rounded">
+    <select name="game" id="game" v-model="chosenGame" class="border rounded" required>
       <option value="" disabled>Please choose your game</option>
       <option v-for="(nameOfTheGame, indx) in games" :key="indx" :value="nameOfTheGame">{{ nameOfTheGame }}</option>
     </select>
@@ -36,9 +36,9 @@
 
 <script setup>
   import { ref } from 'vue';
-  import { calcSensCS2ToBF2042, calcSensCS2toVal, calcSensValToCS2, calcSensBF2042ToVal, calcSensWarzone2ToCS2, calcSensCS2ToWarzone2, calcSensBF2042ToCS2, calcSensValToBF2042, calcSensWarzone2ToBF2042, calcSensBF2042ToWarzone2, calcSensValToWarzone2, calcSensWarzone2ToVal } from './scripts/converterFuncs';
+  import { calcSensCS2ToBF2042, calcSensCS2toVal, calcSensValToCS2, calcSensBF2042ToVal, calcSensWarzone2ToCS2, calcSensCS2ToWarzone2, calcSensBF2042ToCS2, calcSensValToBF2042, calcSensWarzone2ToBF2042, calcSensBF2042ToWarzone2, calcSensValToWarzone2, calcSensWarzone2ToVal, calcSensApexToBF2042, calcSensBF2042ToApex, calcSensApexToVal, calcSensValToApex, calcSensApexToWarzone2, calcSensWarzone2ToApex } from './scripts/converterFuncs';
 
-  const games = ["Counter Strike 2", "Valorant", "Battlefield 2042", "Warzone 2"]
+  const games = ["Counter Strike 2", "Valorant", "Battlefield 2042", "Warzone 2", "Apex Legends"]
 
   const chosenGame = ref("")
   const sens = ref("")
@@ -73,6 +73,22 @@
       finalSens.value = calcSensValToWarzone2(sens.value, dpi.value, newDpi.value);
     } else if (chosenGame.value == "Warzone 2" && finalGame.value == "Valorant") {
       finalSens.value = calcSensWarzone2ToVal(sens.value, dpi.value, newDpi.value);
+    } else if (chosenGame.value == "Apex Legends" && finalGame.value == "Counter Strike 2") {
+      finalSens.value = sens.value * (dpi.value / newDpi.value);
+    } else if (chosenGame.value == "Counter Strike 2" && finalGame.value == "Apex Legends") {
+      finalSens.value = sens.value * (dpi.value / newDpi.value);
+    } else if (chosenGame.value == "Apex Legends" && finalGame.value == "Battlefield 2042") {
+      finalSens.value = calcSensApexToBF2042(sens.value, dpi.value, newDpi.value);
+    } else if (chosenGame.value == "Battlefield 2042" && finalGame.value == "Apex Legends") {
+      finalSens.value = calcSensBF2042ToApex(sens.value, dpi.value, newDpi.value);
+    } else if (chosenGame.value == "Apex Legends" && finalGame.value == "Valorant") {
+      finalSens.value = calcSensApexToVal(sens.value, dpi.value, newDpi.value);
+    } else if (chosenGame.value == "Valorant" && finalGame.value == "Apex Legends") {
+      finalSens.value = calcSensValToApex(sens.value, dpi.value, newDpi.value);
+    } else if (chosenGame.value = "Apex Legends" && finalGame.value == "Warzone 2") {
+      finalSens.value = calcSensApexToWarzone2(sens.value, dpi.value, newDpi.value);
+    } else if (chosenGame.value == "Warzone 2" && finalGame.value == "Apex Legends") {
+      finalSens.value = calcSensWarzone2ToApex(sens.value, dpi.value, newDpi.value);
     }
   }
 </script>
