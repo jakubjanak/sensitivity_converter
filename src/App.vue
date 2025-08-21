@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import Converter from "./components/Converter.vue"
 </script>
 
 <template>
-  <HelloWorld />
+  <Converter />
 </template>

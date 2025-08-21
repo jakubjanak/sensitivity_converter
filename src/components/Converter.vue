@@ -36,9 +36,9 @@
 
 <script setup>
   import { ref } from 'vue';
-  import { calcSensCS2ToBF2042 } from './scripts/converterFuncs';
+  import { calcSensCS2ToBF2042, calcSensCS2toVal, calcSensValToCS2, calcSensBF2042ToVal, calcSensWarzone2ToCS2, calcSensCS2ToWarzone2 } from './scripts/converterFuncs';
 
-  const games = ["Counter Strike 2", "Valorant", "Battlefield 2042"]
+  const games = ["Counter Strike 2", "Valorant", "Battlefield 2042", "Warzone 2"]
 
   const chosenGame = ref("")
   const sens = ref("")
@@ -51,8 +51,21 @@
     if (chosenGame.value == "Counter Strike 2" && finalGame.value == "Battlefield 2042") {
       const result = calcSensCS2ToBF2042(sens.value, dpi.value, newDpi.value);
       finalSens.value = result;
-      console.log(result)
-      console.log(finalSens.value)
+    } else if (chosenGame.value == "Counter Strike 2" && finalGame.value == "Valorant") {
+      const result = calcSensCS2toVal(sens.value, dpi.value, newDpi.value);
+      finalSens.value = result;
+    } else if (chosenGame.value == "Valorant" && finalGame.value == "Counter Strike 2") {
+      const result = calcSensValToCS2(sens.value, dpi.value, newDpi.value);
+      finalSens.value = result;
+    } else if (chosenGame.value == "Battlefield 2042" && finalGame.value == "Valorant") {
+      const result = calcSensBF2042ToVal(sens.value, dpi.value, newDpi.value);
+      finalSens.value = result;
+    } else if (chosenGame.value = "Warzone 2" && finalGame.value == "Counter Strike 2") {
+      const result = calcSensWarzone2ToCS2(sens.value, dpi.value, newDpi.value);
+      finalSens.value = result;
+    } else if (chosenGame.value = "Counter Strike 2" && finalGame.value == "Warzone 2") {
+      const result = calcSensCS2ToWarzone2(sens.value, dpi.value, newDpi.value);
+      finalSens.value = result;
     }
   }
 </script>
