@@ -36,7 +36,7 @@
 
 <script setup>
   import { ref } from 'vue';
-  import { calcSensCS2ToBF2042, calcSensCS2toVal, calcSensValToCS2, calcSensBF2042ToVal, calcSensWarzone2ToCS2, calcSensCS2ToWarzone2 } from './scripts/converterFuncs';
+  import { calcSensCS2ToBF2042, calcSensCS2toVal, calcSensValToCS2, calcSensBF2042ToVal, calcSensWarzone2ToCS2, calcSensCS2ToWarzone2, calcSensBF2042ToCS2, calcSensValToBF2042, calcSensWarzone2ToBF2042, calcSensBF2042ToWarzone2, calcSensValToWarzone2, calcSensWarzone2ToVal } from './scripts/converterFuncs';
 
   const games = ["Counter Strike 2", "Valorant", "Battlefield 2042", "Warzone 2"]
 
@@ -48,27 +48,31 @@
   const finalSens = ref("")
   
   function convertFunc() {
+    
     if (chosenGame.value == "Counter Strike 2" && finalGame.value == "Battlefield 2042") {
-      const result = calcSensCS2ToBF2042(sens.value, dpi.value, newDpi.value);
-      finalSens.value = result;
+      finalSens.value = calcSensCS2ToBF2042(sens.value, dpi.value, newDpi.value);
+    } else if (chosenGame.value == "Battlefield" && finalGame.value == "Counter Strike 2") {
+      finalSens.value = calcSensBF2042ToCS2(sens.value, dpi.value, newDpi.value);
     } else if (chosenGame.value == "Counter Strike 2" && finalGame.value == "Valorant") {
-      const result = calcSensCS2toVal(sens.value, dpi.value, newDpi.value);
-      finalSens.value = result;
+      finalSens.value = calcSensCS2toVal(sens.value, dpi.value, newDpi.value);
     } else if (chosenGame.value == "Valorant" && finalGame.value == "Counter Strike 2") {
-      const result = calcSensValToCS2(sens.value, dpi.value, newDpi.value);
-      finalSens.value = result;
-    } else if (chosenGame.value == "Battlefield 2042" && finalGame.value == "Valorant") {
-      const result = calcSensBF2042ToVal(sens.value, dpi.value, newDpi.value);
-      finalSens.value = result;
+      finalSens.value = calcSensValToCS2(sens.value, dpi.value, newDpi.value);
+    } else if (chosenGame.value == "Counter Strike 2" && finalGame.value == "Warzone 2") {
+      finalSens.value = calcSensCS2ToWarzone2(sens.value, dpi.value, newDpi.value);
+    } else if (chosenGame.value == "Warzone 2" && finalGame.value == "Counter Strike 2") {
+      finalSens.value = calcSensWarzone2ToCS2(sens.value, dpi.value, newDpi.value);
     } else if (chosenGame.value == "Valorant" && finalGame.value == "Battlefield 2042") {
-      const result = calcSensBF2042ToVal(sens.value, dpi.value, newDpi.value);
-      finalSens.value = result; 
-    } else if (chosenGame.value = "Warzone 2" && finalGame.value == "Counter Strike 2") {
-      const result = calcSensWarzone2ToCS2(sens.value, dpi.value, newDpi.value);
-      finalSens.value = result;
-    } else if (chosenGame.value = "Counter Strike 2" && finalGame.value == "Warzone 2") {
-      const result = calcSensCS2ToWarzone2(sens.value, dpi.value, newDpi.value);
-      finalSens.value = result;
+      finalSens.value = calcSensValToBF2042(sens.value, dpi.value, newDpi.value);
+    } else if (chosenGame.value == "Battlefield 2042" && finalGame.value == "Valorant") {
+      finalSens.value = calcSensBF2042ToVal(sens.value, dpi.value, newDpi.value);
+    } else if (chosenGame.value == "Warzone 2" && finalGame.value == "Battlefield 2042") {
+      finalSens.value = calcSensWarzone2ToBF2042(sens.value, dpi.value, newDpi.value);
+    } else if (chosenGame.value == "Battlefield 2042" && finalGame.value == "Warzone 2") {
+      finalSens.value = calcSensBF2042ToWarzone2(sens.value, dpi.value, newDpi.value);
+    } else if (chosenGame.value == "Valorant" && finalGame.value == "Warzone 2") {
+      finalSens.value = calcSensValToWarzone2(sens.value, dpi.value, newDpi.value);
+    } else if (chosenGame.value == "Warzone 2" && finalGame.value == "Valorant") {
+      finalSens.value = calcSensWarzone2ToVal(sens.value, dpi.value, newDpi.value);
     }
   }
 </script>

@@ -20,6 +20,16 @@ export function calcSensValToCS2(sens1: number, DPI1: number, DPI2: number) {
     return result;
 }
 
+export function calcSensCS2ToWarzone2(sens1: number, DPI1: number, DPI2: number) {
+    const result = sens1 * (DPI1 / DPI2) * (0.022 / 0.0066);
+    return result;
+}
+
+export function calcSensWarzone2ToCS2(sens1: number, DPI1: number, DPI2: number) {
+    const result = sens1 * (DPI1 / DPI2) * (0.0066 / 0.022);
+    return result;
+}
+
 export function calcSensBF2042ToVal(sens1: number, DPI1: number, DPI2: number) {
     const result = sens1 * (DPI1 / DPI2) * (0.0066 / 0.07);
     return result;
@@ -30,12 +40,22 @@ export function calcSensValToBF2042(sens1: number, DPI1: number, DPI2: number) {
     return result;
 }
 
-export function calcSensWarzone2ToCS2(sens1: number, DPI1: number, DPI2: number) {
-    const result = sens1 * (DPI1 / DPI2) * (0.0066 / 0.022);
+export function calcSensBF2042ToWarzone2(sens1: number, DPI1: number, DPI2: number) {
+    const result = sens1 * (DPI1 / DPI2) * (0.0132 / 0.0066);
     return result;
 }
 
-export function calcSensCS2ToWarzone2(sens1: number, DPI1: number, DPI2: number) {
-    const result = sens1 * (DPI1 / DPI2) * (0.022 / 0.0066);
+export function calcSensWarzone2ToBF2042(sens1: number, DPI1: number, DPI2: number) {
+    const result = sens1 * (DPI1 / DPI2) * (0.0066 / 0.0132);
+    return result;
+}
+
+export function calcSensValToWarzone2(sens1: number, DPI1: number, DPI2: number) {
+    const result = sens1 * (DPI1 / DPI2) * (0.07 / 0.0066);
+    return result;
+}
+
+export function calcSensWarzone2ToVal(sens1: number, DPI1: number, DPI2: number) {
+    const result = sens1 * (DPI1 / DPI2) * (0.0066 / 0.07);
     return result;
 }
