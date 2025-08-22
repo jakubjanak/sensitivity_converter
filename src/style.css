@@ -13,3 +13,18 @@
     -moz-appearance: textfield;
   }
 }
+
+@layer components {
+  .bgSelect {
+    background-color: #1C2433;
+    border-color: #1C2433;
+  }
+
+  .bgButton {
+    background-color: #615FFF;
+  }
+}
+
+body {
+  background-color: #101828;
+}

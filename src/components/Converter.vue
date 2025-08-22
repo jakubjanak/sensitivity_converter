@@ -1,36 +1,39 @@
 <template>
-  <div class="mb-5">
-    <label for="game">Choose your game:</label>
-    <select name="game" id="game" v-model="chosenGame" class="border rounded" required>
-      <option value="" disabled>Please choose your game</option>
-      <option v-for="(nameOfTheGame, indx) in games" :key="indx" :value="nameOfTheGame">{{ nameOfTheGame }}</option>
-    </select>
+  <div class="flex flex-col gap-5 px-10 py-10">
+    <div>
+      <label for="game" class="text-white font-bold text-base mr-1.5">Choose your game:</label>
+      <select name="game" id="game" v-model="chosenGame" class="border rounded bgSelect py-1.5 px-3 text-lg" :class="chosenGame === '' ? 'text-white/50' : 'text-white'" required>
+        <option value="" disabled>Please choose your game</option>
+        <option v-for="(nameOfTheGame, indx) in games" :key="indx" :value="nameOfTheGame">{{ nameOfTheGame }}</option>
+      </select>
+    </div>
+    <div>
+      <label for="sens" class="text-white font-bold text-base mr-1.5">Your sensitivity: </label>
+      <input type="number" step="any" name="sens" id="sens" v-model="sens" placeholder="Enter your sensitivity" class="border rounded bgSelect py-1.5 px-3 text-lg text-white">
+    </div>
+    <div>
+      <label for="dpi" class="text-white font-bold text-base mr-1.5">Your DPI: </label>
+      <input type="number" step="any" name="dpi" id="dpi" v-model="dpi" placeholder="Enter your DPI" class="border rounded bgSelect py-1.5 px-3 text-lg text-white">
+    </div>
+      <div>
+      <label for="game" class="text-white font-bold text-base mr-1.5">Choose where to transfer:</label>
+      <select name="finalGame" id="finalGame" v-model="finalGame" class="border rounded bgSelect py-1.5 px-3 text-lg text-white" :class="chosenGame === '' ? 'text-white/50' : 'text-white'">
+        <option value="" disabled>Please choose your game</option>
+        <option v-for="(nameOfTheGame, indx) in games" :key="indx" :value="nameOfTheGame">{{ nameOfTheGame }}</option>
+      </select>
+    </div>
+    <div>
+      <label for="newDpi" class="text-white font-bold text-base mr-1.5">Your  new DPI: </label>
+      <input type="number" step="any" name="newDpi" id="newDpi" v-model="newDpi" placeholder="Enter your DPI" class="border rounded bgSelect py-1.5 px-3 text-lg text-white">
+    </div>
+    <div>
+      <button @click="convertFunc" class="rounded-md bgButton text-white font-bold text-base py-1.5 px-4 cursor-pointer">Convert</button>
+      <p></p>
+    </div>
   </div>
 
-  <label for="sens">Enter your sensitivity: </label>
-  <input type="number" step="any" name="sens" id="sens" v-model="sens" class="border rounded">
-
-  <label for="dpi">Enter your DPI: </label>
-  <input type="number" step="any" name="dpi" id="dpi" v-model="dpi" class="border rounded">
-
-    <div class="my-5">
-    <label for="game">Choose the game where do you wnat to transfer the sensitivity:</label>
-    <select name="finalGame" id="finalGame" v-model="finalGame" class="border rounded">
-      <option value="" disabled>Please choose your game</option>
-      <option v-for="(nameOfTheGame, indx) in games" :key="indx" :value="nameOfTheGame">{{ nameOfTheGame }}</option>
-    </select>
-  </div>
-
-  <label for="newDpi">Enter your  new DPI: </label>
-  <input type="number" step="any" name="newDpi" id="newDpi" v-model="newDpi" class="border rounded">
-
-  <div class="mt-5">
-    <button @click="convertFunc" class="rounded-full bg-blue-500 text-white font-medium py-1 px-3 cursor-pointer">Convert</button>
-    <p></p>
-  </div>
-
-  <div class="mt-10" v-if="finalSens !== '' && finalSens !== null && finalSens !== undefined">
-    {{ finalSens }}
+  <div class="mt-10 px-10" v-if="finalSens !== '' && finalSens !== null && finalSens !== undefined">
+    <p class="text-white font-bold text-base">Your converted sensitivity is: <span class="font-normal bgSelect py-3 px-5 font-base rounded">{{ finalSens }}</span></p>
   </div>
 </template>
 
