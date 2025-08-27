@@ -1,5 +1,8 @@
 <template>
   <div class="flex flex-col gap-5 px-10 py-10">
+    <h1 class="font-bold headingColor text-2xl">
+      Sensitivity Converter by Harlem
+    </h1>
     <div>
       <label for="game" class="text-white font-bold text-base mr-1.5">Choose your game:</label>
       <select name="game" id="game" v-model="chosenGame" class="border rounded bgSelect py-1.5 px-3 text-lg" :class="chosenGame === '' ? 'text-white/50' : 'text-white'" required>

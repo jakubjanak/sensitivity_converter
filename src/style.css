@@ -23,6 +23,10 @@
   .bgButton {
     background-color: #615FFF;
   }
+
+  .headingColor {
+    color: #615FFF;
+  }
 }
 
 body {
