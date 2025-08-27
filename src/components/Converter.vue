@@ -7,7 +7,7 @@
       <label for="game" class="text-white font-bold text-base mr-1.5">Choose your game:</label>
       <select name="game" id="game" v-model="chosenGame" class="border rounded bgSelect py-1.5 px-3 text-lg" :class="chosenGame === '' ? 'text-white/50' : 'text-white'" required>
         <option value="" disabled>Please choose your game</option>
-        <option v-for="(nameOfTheGame, indx) in games" :key="indx" :value="nameOfTheGame">{{ nameOfTheGame }}</option>
+        <option v-for="(nameOfTheGame, indx) in games" :key="indx" :value="nameOfTheGame" :disabled="nameOfTheGame === finalGame">{{ nameOfTheGame }}</option>
       </select>
     </div>
     <div>
@@ -22,7 +22,7 @@
       <label for="game" class="text-white font-bold text-base mr-1.5">Choose where to transfer:</label>
       <select name="finalGame" id="finalGame" v-model="finalGame" class="border rounded bgSelect py-1.5 px-3 text-lg text-white" :class="finalGame === '' ? 'text-white/50' : 'text-white'">
         <option value="" disabled>Please choose your game</option>
-        <option v-for="(nameOfTheGame, indx) in games" :key="indx" :value="nameOfTheGame">{{ nameOfTheGame }}</option>
+        <option v-for="(nameOfTheGame, indx) in games" :key="indx" :value="nameOfTheGame" :disabled="nameOfTheGame === chosenGame">{{ nameOfTheGame }}</option>
       </select>
     </div>
     <div>
