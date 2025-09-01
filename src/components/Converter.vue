@@ -46,13 +46,14 @@
       <path fill-rule="evenodd" d="M16.72 7.72a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 0 1 0 1.06l-3.75 3.75a.75.75 0 1 1-1.06-1.06l2.47-2.47H3a.75.75 0 0 1 0-1.5h16.19l-2.47-2.47a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
   </svg>
 
-    <img :src="finalGame === 'Counter Strike 2' ? '/cs2.jpg' : finalGame === 'Valorant' ? '/valorant.jpg' : finalGame === 'Battlefield 2042' ? '/bf2042.jpg' : finalGame === 'Warzone 2' ? '/warzone2.jpg' : finalGame === 'Apex Legends' ? '/apex.jpg' : ''" :alt="finalGame === 'Counter Strike 2' ? 'Counter Strike 2' : finalGame === 'Valorant' ? 'Valorant' : finalGame === 'Battlefield 2042' ? 'Battlefield 2042' : finalGame === 'Warzone 2' ? 'Warzone 2' : finalGame === 'Apex Legends' ? 'Apex Legends' : ''" :class="finalGame === '' ? 'hidden' : 'max-h-80'"></img>
+    <img :src="finalGame === 'Counter Strike 2' ? CS2.Image : finalGame === 'Valorant' ? '/valorant.jpg' : finalGame === 'Battlefield 2042' ? '/bf2042.jpg' : finalGame === 'Warzone 2' ? '/warzone2.jpg' : finalGame === 'Apex Legends' ? '/apex.jpg' : ''" :alt="finalGame === 'Counter Strike 2' ? 'Counter Strike 2' : finalGame === 'Valorant' ? 'Valorant' : finalGame === 'Battlefield 2042' ? 'Battlefield 2042' : finalGame === 'Warzone 2' ? 'Warzone 2' : finalGame === 'Apex Legends' ? 'Apex Legends' : ''" :class="finalGame === '' ? 'hidden' : 'max-h-80'"></img>
   </div>
 </template>
 
 <script setup>
   import { ref } from 'vue';
-  import { calcSensCS2ToBF2042, calcSensCS2toVal, calcSensValToCS2, calcSensBF2042ToVal, calcSensWarzone2ToCS2, calcSensCS2ToWarzone2, calcSensBF2042ToCS2, calcSensValToBF2042, calcSensWarzone2ToBF2042, calcSensBF2042ToWarzone2, calcSensValToWarzone2, calcSensWarzone2ToVal, calcSensApexToBF2042, calcSensBF2042ToApex, calcSensApexToVal, calcSensValToApex, calcSensApexToWarzone2, calcSensWarzone2ToApex } from './scripts/converterFuncs';
+
+  import { CalculateSensitivity } from './scripts/converterFuncs';
 
   const games = ["Counter Strike 2", "Valorant", "Battlefield 2042", "Warzone 2", "Apex Legends"]
 
@@ -64,47 +65,8 @@
   const finalSens = ref("")
   
   function convertFunc() {
-    
-    if (chosenGame.value == "Counter Strike 2" && finalGame.value == "Battlefield 2042") {
-      finalSens.value = calcSensCS2ToBF2042(sens.value, dpi.value, newDpi.value);
-    } else if (chosenGame.value == "Battlefield" && finalGame.value == "Counter Strike 2") {
-      finalSens.value = calcSensBF2042ToCS2(sens.value, dpi.value, newDpi.value);
-    } else if (chosenGame.value == "Counter Strike 2" && finalGame.value == "Valorant") {
-      finalSens.value = calcSensCS2toVal(sens.value, dpi.value, newDpi.value);
-    } else if (chosenGame.value == "Valorant" && finalGame.value == "Counter Strike 2") {
-      finalSens.value = calcSensValToCS2(sens.value, dpi.value, newDpi.value);
-    } else if (chosenGame.value == "Counter Strike 2" && finalGame.value == "Warzone 2") {
-      finalSens.value = calcSensCS2ToWarzone2(sens.value, dpi.value, newDpi.value);
-    } else if (chosenGame.value == "Warzone 2" && finalGame.value == "Counter Strike 2") {
-      finalSens.value = calcSensWarzone2ToCS2(sens.value, dpi.value, newDpi.value);
-    } else if (chosenGame.value == "Valorant" && finalGame.value == "Battlefield 2042") {
-      finalSens.value = calcSensValToBF2042(sens.value, dpi.value, newDpi.value);
-    } else if (chosenGame.value == "Battlefield 2042" && finalGame.value == "Valorant") {
-      finalSens.value = calcSensBF2042ToVal(sens.value, dpi.value, newDpi.value);
-    } else if (chosenGame.value == "Warzone 2" && finalGame.value == "Battlefield 2042") {
-      finalSens.value = calcSensWarzone2ToBF2042(sens.value, dpi.value, newDpi.value);
-    } else if (chosenGame.value == "Battlefield 2042" && finalGame.value == "Warzone 2") {
-      finalSens.value = calcSensBF2042ToWarzone2(sens.value, dpi.value, newDpi.value);
-    } else if (chosenGame.value == "Valorant" && finalGame.value == "Warzone 2") {
-      finalSens.value = calcSensValToWarzone2(sens.value, dpi.value, newDpi.value);
-    } else if (chosenGame.value == "Warzone 2" && finalGame.value == "Valorant") {
-      finalSens.value = calcSensWarzone2ToVal(sens.value, dpi.value, newDpi.value);
-    } else if (chosenGame.value == "Apex Legends" && finalGame.value == "Counter Strike 2") {
-      finalSens.value = sens.value * (dpi.value / newDpi.value);
-    } else if (chosenGame.value == "Counter Strike 2" && finalGame.value == "Apex Legends") {
-      finalSens.value = sens.value * (dpi.value / newDpi.value);
-    } else if (chosenGame.value == "Apex Legends" && finalGame.value == "Battlefield 2042") {
-      finalSens.value = calcSensApexToBF2042(sens.value, dpi.value, newDpi.value);
-    } else if (chosenGame.value == "Battlefield 2042" && finalGame.value == "Apex Legends") {
-      finalSens.value = calcSensBF2042ToApex(sens.value, dpi.value, newDpi.value);
-    } else if (chosenGame.value == "Apex Legends" && finalGame.value == "Valorant") {
-      finalSens.value = calcSensApexToVal(sens.value, dpi.value, newDpi.value);
-    } else if (chosenGame.value == "Valorant" && finalGame.value == "Apex Legends") {
-      finalSens.value = calcSensValToApex(sens.value, dpi.value, newDpi.value);
-    } else if (chosenGame.value = "Apex Legends" && finalGame.value == "Warzone 2") {
-      finalSens.value = calcSensApexToWarzone2(sens.value, dpi.value, newDpi.value);
-    } else if (chosenGame.value == "Warzone 2" && finalGame.value == "Apex Legends") {
-      finalSens.value = calcSensWarzone2ToApex(sens.value, dpi.value, newDpi.value);
-    }
+    console.log("Sens is " + sens.value + ", DPI is " + dpi.value + ", DPI2 is " + newDpi.value + ", chosenGame is " + chosenGame.value + " and finalGame is " + finalGame.value)
+    const result = CalculateSensitivity(sens.value, dpi.value, newDpi.value, chosenGame.value, finalGame.value);
+    finalSens.value = result
   }
 </script>
