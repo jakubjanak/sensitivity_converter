@@ -55,7 +55,7 @@
 
   import { CalculateSensitivity, GameImage } from './scripts/converterFuncs';
 
-  const games = ["Apex Legends", "Call of Duty: Black Ops 6", "Call of Duty: Modern Warfare 3 (2023)", "Call of Duty: Warzone", "Counter Strike 2", "Valorant"]
+  const games = ["Apex Legends", "Battlefield 1", "Battlefield 4", "Battlefield 6", "Battlefield 2042", "Battlefield V", "Call of Duty: Black Ops 6", "Call of Duty: Modern Warfare 3 (2023)", "Call of Duty: Warzone", "Counter Strike 2", "Team Fortress 2", "Valorant"]
 
   const chosenGame = ref("")
   const sens = ref("")
