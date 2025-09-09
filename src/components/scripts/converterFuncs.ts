@@ -1,5 +1,6 @@
 type GameName = 
     | "Apex Legends"
+    | "ARK: Survival Evolved"
     | "Battlefield 1"
     | "Battlefield 4"
     | "Battlefield 6"
@@ -21,6 +22,7 @@ export const games: Record<GameName, GameConfig> = {
     "Apex Legends": {
         scaleFactors: {
             "Apex Legends": 1,
+            "ARK: Survival Evolved": 0.022 / 0.175,
             "Battlefield 1": 0.022 / 0.008495,
             "Battlefield 4": 0.022 / 0.008495,
             "Battlefield 6": 0.022 / 0.00197355,
@@ -35,14 +37,33 @@ export const games: Record<GameName, GameConfig> = {
         },
         "Image": "/apex.jpg"
     },
+    "ARK: Survival Evolved": {
+        scaleFactors: {
+            "Apex Legends": 0.175 / 0.022,
+            "ARK: Survival Evolved": 1,
+            "Battlefield 1": 0.175 / 0.008495,
+            "Battlefield 4": 0.175 / 0.008495,
+            "Battlefield 6": 0.175 / 0.00197355,
+            "Battlefield 2042": 0.175 / 0.008495,
+            "Battlefield V": 0.175 / 0.008495,
+            "Call of Duty: Black Ops 6": 0.175 / 0.0066,
+            "Call of Duty: Modern Warfare 3 (2023)": 0.175 / 0.0066,
+            "Call of Duty: Warzone": 0.175 / 0.0066,
+            "Counter Strike 2": 0.175 / 0.022,
+            "Team Fortress 2": 0.175 / 0.022,
+            "Valorant": 0.175 / 0.07
+        },
+        "Image": "/ark.webp"
+    },
     "Battlefield 1": {
         scaleFactors: {
             "Apex Legends": 0.008495 / 0.022,
-            "Battlefield 1": 0.022 / 0.008495,
-            "Battlefield 4": 0.022 / 0.008495,
-            "Battlefield 6": 0.022 / 0.00197355,
-            "Battlefield 2042": 0.022 / 0.008495,
-            "Battlefield V": 0.022 / 0.008495,
+            "ARK: Survival Evolved":  0.008495 / 0.175,
+            "Battlefield 1": 0.008495 / 0.008495,
+            "Battlefield 4": 0.008495 / 0.008495,
+            "Battlefield 6": 0.008495 / 0.00197355,
+            "Battlefield 2042": 0.008495 / 0.008495,
+            "Battlefield V": 0.008495 / 0.008495,
             "Call of Duty: Black Ops 6": 0.008495 / 0.0066,
             "Call of Duty: Modern Warfare 3 (2023)": 0.008495 / 0.0066,
             "Call of Duty: Warzone": 0.008495 / 0.0066,
@@ -55,11 +76,12 @@ export const games: Record<GameName, GameConfig> = {
     "Battlefield 4": {
         scaleFactors: {
             "Apex Legends": 0.008495 / 0.022,
-            "Battlefield 1": 0.022 / 0.008495,
-            "Battlefield 4": 0.022 / 0.008495,
-            "Battlefield 6": 0.022 / 0.00197355,
-            "Battlefield 2042": 0.022 / 0.008495,
-            "Battlefield V": 0.022 / 0.008495,
+            "ARK: Survival Evolved":  0.008495 / 0.175,
+            "Battlefield 1": 0.008495 / 0.008495,
+            "Battlefield 4": 0.008495 / 0.008495,
+            "Battlefield 6": 0.008495 / 0.00197355,
+            "Battlefield 2042": 0.008495 / 0.008495,
+            "Battlefield V": 0.008495 / 0.008495,
             "Call of Duty: Black Ops 6": 0.008495 / 0.0066,
             "Call of Duty: Modern Warfare 3 (2023)": 0.008495 / 0.0066,
             "Call of Duty: Warzone": 0.008495 / 0.0066,
@@ -72,11 +94,12 @@ export const games: Record<GameName, GameConfig> = {
     "Battlefield 6": {
         scaleFactors: {
             "Apex Legends": 0.00197355 / 0.022,
-            "Battlefield 1": 0.022 / 0.008495,
-            "Battlefield 4": 0.022 / 0.008495,
-            "Battlefield 6": 0.022 / 0.00197355,
-            "Battlefield 2042": 0.022 / 0.008495,
-            "Battlefield V": 0.022 / 0.008495,
+            "ARK: Survival Evolved":  0.008495 / 0.175,
+            "Battlefield 1": 0.00197355 / 0.008495,
+            "Battlefield 4": 0.00197355 / 0.008495,
+            "Battlefield 6": 1,
+            "Battlefield 2042": 0.00197355 / 0.008495,
+            "Battlefield V": 0.00197355 / 0.008495,
             "Call of Duty: Black Ops 6": 0.00197355 / 0.0066,
             "Call of Duty: Modern Warfare 3 (2023)": 0.00197355 / 0.0066,
             "Call of Duty: Warzone": 0.00197355 / 0.0066,
@@ -89,11 +112,12 @@ export const games: Record<GameName, GameConfig> = {
     "Battlefield 2042": {
         scaleFactors: {
             "Apex Legends": 0.008495 / 0.022,
-            "Battlefield 1": 0.022 / 0.008495,
-            "Battlefield 4": 0.022 / 0.008495,
-            "Battlefield 6": 0.022 / 0.00197355,
-            "Battlefield 2042": 0.022 / 0.008495,
-            "Battlefield V": 0.022 / 0.008495,
+            "ARK: Survival Evolved":  0.008495 / 0.175,
+            "Battlefield 1": 0.008495 / 0.008495,
+            "Battlefield 4": 0.008495 / 0.008495,
+            "Battlefield 6": 0.008495 / 0.00197355,
+            "Battlefield 2042": 0.008495 / 0.008495,
+            "Battlefield V": 0.008495 / 0.008495,
             "Call of Duty: Black Ops 6": 0.008495 / 0.0066,
             "Call of Duty: Modern Warfare 3 (2023)": 0.008495 / 0.0066,
             "Call of Duty: Warzone": 0.008495 / 0.0066,
@@ -106,11 +130,12 @@ export const games: Record<GameName, GameConfig> = {
     "Battlefield V": {
         scaleFactors: {
             "Apex Legends": 0.008495 / 0.022,
-            "Battlefield 1": 0.022 / 0.008495,
-            "Battlefield 4": 0.022 / 0.008495,
-            "Battlefield 6": 0.022 / 0.00197355,
-            "Battlefield 2042": 0.022 / 0.008495,
-            "Battlefield V": 0.022 / 0.008495,
+            "ARK: Survival Evolved":  0.008495 / 0.175,
+            "Battlefield 1": 0.008495 / 0.008495,
+            "Battlefield 4": 0.008495 / 0.008495,
+            "Battlefield 6": 0.008495 / 0.00197355,
+            "Battlefield 2042": 0.008495 / 0.008495,
+            "Battlefield V": 0.008495 / 0.008495,
             "Call of Duty: Black Ops 6": 0.008495 / 0.0066,
             "Call of Duty: Modern Warfare 3 (2023)": 0.008495 / 0.0066,
             "Call of Duty: Warzone": 0.008495 / 0.0066,
@@ -123,11 +148,12 @@ export const games: Record<GameName, GameConfig> = {
     "Call of Duty: Black Ops 6": {
         scaleFactors: {
             "Apex Legends": 0.0066 / 0.022,
-            "Battlefield 1": 0.022 / 0.008495,
-            "Battlefield 4": 0.022 / 0.008495,
-            "Battlefield 6": 0.022 / 0.00197355,
-            "Battlefield 2042": 0.022 / 0.008495,
-            "Battlefield V": 0.022 / 0.008495,
+            "ARK: Survival Evolved":  0.0066 / 0.175,
+            "Battlefield 1": 0.0066 / 0.008495,
+            "Battlefield 4": 0.0066 / 0.008495,
+            "Battlefield 6": 0.0066 / 0.00197355,
+            "Battlefield 2042": 0.0066 / 0.008495,
+            "Battlefield V": 0.0066 / 0.008495,
             "Call of Duty: Black Ops 6": 1,
             "Call of Duty: Modern Warfare 3 (2023)": 1,
             "Call of Duty: Warzone": 1,
@@ -140,11 +166,12 @@ export const games: Record<GameName, GameConfig> = {
     "Call of Duty: Modern Warfare 3 (2023)": {
         scaleFactors: {
             "Apex Legends": 0.0066 / 0.022,
-            "Battlefield 1": 0.022 / 0.008495,
-            "Battlefield 4": 0.022 / 0.008495,
-            "Battlefield 6": 0.022 / 0.00197355,
-            "Battlefield 2042": 0.022 / 0.008495,
-            "Battlefield V": 0.022 / 0.008495,
+            "ARK: Survival Evolved":  0.0066 / 0.175,
+            "Battlefield 1": 0.0066 / 0.008495,
+            "Battlefield 4": 0.0066 / 0.008495,
+            "Battlefield 6": 0.0066 / 0.00197355,
+            "Battlefield 2042": 0.0066 / 0.008495,
+            "Battlefield V": 0.0066 / 0.008495,
             "Call of Duty: Black Ops 6": 1,
             "Call of Duty: Modern Warfare 3 (2023)": 1,
             "Call of Duty: Warzone": 1,
@@ -157,11 +184,12 @@ export const games: Record<GameName, GameConfig> = {
     "Call of Duty: Warzone": {
         scaleFactors: {
             "Apex Legends": 0.0066 / 0.022,
-            "Battlefield 1": 0.022 / 0.008495,
-            "Battlefield 4": 0.022 / 0.008495,
-            "Battlefield 6": 0.022 / 0.00197355,
-            "Battlefield 2042": 0.022 / 0.008495,
-            "Battlefield V": 0.022 / 0.008495,
+            "ARK: Survival Evolved":  0.0066 / 0.175,
+            "Battlefield 1": 0.0066 / 0.008495,
+            "Battlefield 4": 0.0066 / 0.008495,
+            "Battlefield 6": 0.0066 / 0.00197355,
+            "Battlefield 2042": 0.0066 / 0.008495,
+            "Battlefield V": 0.0066 / 0.008495,
             "Call of Duty: Black Ops 6": 1,
             "Call of Duty: Modern Warfare 3 (2023)": 1,
             "Call of Duty: Warzone": 1,
@@ -174,6 +202,7 @@ export const games: Record<GameName, GameConfig> = {
     "Counter Strike 2": {
         scaleFactors: {
             "Apex Legends": 1,
+            "ARK: Survival Evolved":  0.022 / 0.175,
             "Battlefield 1": 0.022 / 0.008495,
             "Battlefield 4": 0.022 / 0.008495,
             "Battlefield 6": 0.022 / 0.00197355,
@@ -191,6 +220,7 @@ export const games: Record<GameName, GameConfig> = {
     "Team Fortress 2": {
         scaleFactors: {
             "Apex Legends": 1,
+            "ARK: Survival Evolved":  0.022 / 0.175,
             "Battlefield 1": 0.022 / 0.008495,
             "Battlefield 4": 0.022 / 0.008495,
             "Battlefield 6": 0.022 / 0.00197355,
@@ -208,11 +238,12 @@ export const games: Record<GameName, GameConfig> = {
     "Valorant": {
         scaleFactors: {
             "Apex Legends": 0.07 / 0.022,
-            "Battlefield 1": 0.022 / 0.008495,
-            "Battlefield 4": 0.022 / 0.008495,
-            "Battlefield 6": 0.022 / 0.00197355,
-            "Battlefield 2042": 0.022 / 0.008495,
-            "Battlefield V": 0.022 / 0.008495,
+            "ARK: Survival Evolved":  0.07 / 0.175,
+            "Battlefield 1": 0.07 / 0.008495,
+            "Battlefield 4": 0.07 / 0.008495,
+            "Battlefield 6": 0.07 / 0.00197355,
+            "Battlefield 2042": 0.07 / 0.008495,
+            "Battlefield V": 0.07 / 0.008495,
             "Call of Duty: Black Ops 6": 0.07 / 0.0066,
             "Call of Duty: Modern Warfare 3 (2023)": 0.07 / 0.0066,
             "Call of Duty: Warzone": 0.07 / 0.0066,
