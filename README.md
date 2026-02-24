@@ -1,5 +1,41 @@
-# Vue 3 + TypeScript + Vite
+# Sensitivity convertor
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Projekt je zaměřený na převádění sensitivy mezi nejznámějšími FPS hrami. Projekt je hlavně pro hráče těchto her, kteří rádi experimentují s různými sensitivitami, ale hrají více FPS her a rádi si všude přenášejí stejnou sensitivitu.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+Aplikace umožňuje výběr hry z dropdown menu, následné zadání sensitivity a DPI.
+
+## Tech stack
+- Vue 3
+- Typescript
+- TailwindCSS
+- Vite
+
+## Instalace
+
+1. Naklonování repozitáře
+```bash
+git clone https://github.com/jakubjanak/sensitivity_converter.git
+```
+2. Přesunutí se do složky projektu
+```bash
+cd sensitivity_converter
+```
+3. Instalace
+```bash
+npm install
+```
+4. Spuštění
+```bash
+npm run dev
+```
+
+## Screenshot z aplikace
+![sensitivity_converter](https://github.com/user-attachments/assets/3c331c87-91c7-4229-945d-20c3cd1dbc42)
+
+# Autor
+
+**Jakub Janák**
+- GitHub: [@jakubjanak](https://github.com/jakubjanak)
+- Email: jakub.janak@icloud.com
+- LinkedIn: [here](https://www.linkedin.com/in/jakub-jan%C3%A1k-108779209/)
+
